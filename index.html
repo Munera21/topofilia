@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topofilia - Desarrollo Sostenible del Territorio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -92,34 +92,14 @@
     <script>
         document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
-            // Número de WhatsApp al que se enviará el mensaje (incluye el código del país sin el '+')
             const telefono = '573202366363';
-
-            // Recoger los datos del formulario
             const nombre = document.getElementById('cliente-nombre').value;
             const contacto = document.getElementById('cliente-contacto').value;
             const servicio = document.getElementById('servicio-interes').value;
             const ubicacion = document.getElementById('ubicacion').value;
             const mensaje = document.getElementById('mensaje').value;
-
-            // Formatear el mensaje para la URL de WhatsApp
-            const textoMensaje = `
-*¡Hola! Quisiera solicitar una cotización.*
-
-*Nombre:* ${nombre}
-*Contacto (Celular/Email):* ${contacto}
-*Servicio de Interés:* ${servicio}
-*Ubicación del Proyecto:* ${ubicacion}
-
-*Mensaje:*
-${mensaje}
-            `;
-
-            // Crear la URL de WhatsApp
+            const textoMensaje = `*¡Hola! Quisiera solicitar una cotización.*\n\n*Nombre:* ${nombre}\n*Contacto (Celular/Email):* ${contacto}\n*Servicio de Interés:* ${servicio}\n*Ubicación del Proyecto:* ${ubicacion}\n\n*Mensaje:*\n${mensaje}`;
             const url = `https://wa.me/${telefono}?text=${encodeURIComponent(textoMensaje.trim())}`;
-
-            // Abrir WhatsApp en una nueva pestaña
             window.open(url, '_blank');
         });
     </script>
