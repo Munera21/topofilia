@@ -20,7 +20,7 @@
             <ul class="nav-links">
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
             <div class="nav-contact">
                 <span>📞 +57 310 481 5354</span>
@@ -37,6 +37,92 @@
             </div>
         </main>
     </header>
+
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Solicita una Cotización</h2>
+                <p class="section-subtitle">Completa el formulario y nos pondremos en contacto contigo a través de WhatsApp para brindarte una asesoría personalizada.</p>
+            </div>
+            <form id="whatsapp-form" class="contact-form">
+                <div class="form-group">
+                    <label for="cliente-nombre">Tu Nombre Completo</label>
+                    <input type="text" id="cliente-nombre" placeholder="Ej: Alejandro Munera" required>
+                </div>
+                <div class="form-group">
+                    <label for="cliente-contacto">Tu Número de Celular o Email</label>
+                    <input type="text" id="cliente-contacto" placeholder="Para poder contactarte" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicio-interes">¿En qué servicio estás interesado?</label>
+                    <select id="servicio-interes" required>
+                        <option value="" disabled selected>Selecciona un servicio...</option>
+                        <option value="Levantamientos Topográficos">Levantamientos Topográficos</option>
+                        <option value="Drones y Fotogrametría">Drones y Fotogrametría</option>
+                        <option value="Asesorías y Consultoría">Asesorías y Consultoría</option>
+                        <option value="Capacitación y Formación">Capacitación y Formación</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación del Proyecto</label>
+                    <div class="location-input">
+                        <input type="text" id="ubicacion" placeholder="Pega aquí el enlace de Google Maps o la dirección" required>
+                        <a href="https://maps.google.com/" target="_blank" class="map-button">Abrir Mapa</a>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="mensaje">Describe brevemente tu proyecto o necesidad</label>
+                    <textarea id="mensaje" rows="4" placeholder="Danos más detalles para darte una mejor asesoría..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="submit-button-form">Enviar por WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Topofilia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Número de WhatsApp al que se enviará el mensaje (incluye el código del país sin el '+')
+            const telefono = '573202366363';
+
+            // Recoger los datos del formulario
+            const nombre = document.getElementById('cliente-nombre').value;
+            const contacto = document.getElementById('cliente-contacto').value;
+            const servicio = document.getElementById('servicio-interes').value;
+            const ubicacion = document.getElementById('ubicacion').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            // Formatear el mensaje para la URL de WhatsApp
+            const textoMensaje = `
+*¡Hola! Quisiera solicitar una cotización.*
+
+*Nombre:* ${nombre}
+*Contacto (Celular/Email):* ${contacto}
+*Servicio de Interés:* ${servicio}
+*Ubicación del Proyecto:* ${ubicacion}
+
+*Mensaje:*
+${mensaje}
+            `;
+
+            // Crear la URL de WhatsApp
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(textoMensaje.trim())}`;
+
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(url, '_blank');
+        });
+    </script>
 
 </body>
 </html>
