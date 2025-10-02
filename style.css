@@ -1,104 +1,152 @@
-/* ================================ */
-/* BLOQUE DE COTIZACIÓN (SERVICIOS) */
-/* ================================ */
-.quote-block {
-    text-align: center;
-    background-color: var(--primary-green);
-    color: var(--light-text);
-    padding: 50px 30px;
-    border-radius: 10px;
-    margin-top: 80px; /* Espacio después de los servicios */
+/* --- Reseteo Básico y Variables --- */
+:root {
+    --primary-green: #4a6a4f;
+    --light-green: #f0f5f0;
+    --dark-text: #333;
+    --light-text: #ffffff;
+    --font-family: 'Poppins', sans-serif;
 }
 
-.quote-block h3 {
-    font-size: 2.2rem;
-    margin-bottom: 15px;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-family);
+    color: var(--dark-text);
+    line-height: 1.6;
+    background-color: #ffffff;
 }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; }
+ul { list-style: none; }
 
-.quote-block p {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.cta-button-quote {
-    background-color: #fff;
-    color: var(--primary-green);
-    padding: 15px 35px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button-quote:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* ================================ */
-/* ESTILOS DE LA VENTANA MODAL      */
-/* ================================ */
-.modal-overlay {
-    /* Oculto por defecto */
-    display: none; 
-
-    /* Estilos para cubrir la pantalla */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
-    
-    /* Para centrar el contenido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Asegura que esté por encima de todo */
-    padding: 20px;
-}
-
-.modal-content {
+/* ======================= */
+/* ESTILOS DEL HERO    */
+/* ======================= */
+.hero-section {
     position: relative;
-    background-color: #fff;
-    border-radius: 10px;
+    height: 100vh;
+    min-height: 600px;
+    color: var(--light-text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+}
+.hero-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* !!! CAMBIA ESTA URL POR LA DE TU IMAGEN !!! */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1588239333339-50f38b1f510e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk5MDB8MHwxfHNlYXJjaHwyfHxzdXN0YWluYWJsZSUyMGRldmVsb3BtZW50fGVufDB8fHx8MTcyODM0MTgzNHww&ixlib=rb-4.0.3&q=80&w=1080');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-section .main-nav {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.hero-section .main-nav a { color: var(--light-text); }
+.hero-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 100%;
     max-width: 800px;
-    max-height: 90vh; /* Máxima altura */
-    overflow-y: auto; /* Permite scroll si el contenido es muy largo */
-    animation: fadeIn 0.3s ease-out;
 }
-
-.modal-content .contact-form {
-    box-shadow: none; /* Quitamos la sombra del formulario dentro del modal */
+.hero-text h1 { font-size: 3.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+.hero-text p { font-size: 1.1rem; margin-bottom: 30px; }
+.cta-button {
+    color: var(--light-text);
+    font-weight: 600;
+    border: 2px solid var(--light-text);
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+.cta-button:hover { background-color: var(--light-text); color: var(--primary-green); }
 
-.close-button {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    background: none;
+/* Estilos compartidos para los menús */
+.logo a { display: block; }
+.logo img { height: 40px; display: block; }
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { font-weight: 600; }
+
+/* ================================ */
+/* ESTILOS SECCIÓN DE CONTACTO   */
+/* ================================ */
+.contact-section { padding: 80px 0; background-color: var(--light-green); }
+.contact-section .section-header { text-align: center; margin-bottom: 50px; }
+.section-title { font-size: 2.5rem; color: var(--primary-green); margin-bottom: 15px; }
+.section-subtitle { font-size: 1.2rem; color: #555; max-width: 600px; margin: 0 auto; }
+
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+.form-group { display: flex; flex-direction: column; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { margin-bottom: 8px; font-weight: 600; color: #555; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+.location-input { display: flex; gap: 10px; }
+.location-input input { flex-grow: 1; }
+.map-button {
+    padding: 0 20px;
+    background-color: #f0f0f0;
+    color: var(--dark-text);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+.map-button:hover { background-color: #e0e0e0; }
+.submit-button-form {
+    background-color: var(--primary-green);
+    color: var(--light-text);
     border: none;
-    font-size: 2.5rem;
-    color: #999;
+    padding: 15px;
+    border-radius: 5px;
     cursor: pointer;
-    line-height: 1;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
-.close-button:hover {
-    color: #333;
-}
+.submit-button-form:hover { background-color: #38523c; }
 
-/* Animación para el modal */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+/* ================================ */
+/* ESTILOS DEL FOOTER            */
+/* ================================ */
+.main-footer { background-color: #333; color: #fff; text-align: center; padding: 20px 0; }
+
+/* ================================ */
+/* MEDIA QUERIES           */
+/* ================================ */
+@media (max-width: 768px) {
+    .nav-links, .nav-contact { display: none; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .contact-form { grid-template-columns: 1fr; }
 }
