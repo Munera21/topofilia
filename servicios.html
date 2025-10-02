@@ -19,7 +19,7 @@
             <ul class="nav-links">
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
             <div class="nav-contact">
                 <span>📞 +57 310 481 5354</span>
@@ -37,40 +37,117 @@
                 
                 <div class="servicios-grid">
                     <div class="servicio-card">
-                        <img class="servicio-img" src="https://images.unsplash.com/photo-1581092916375-2a29357b7f08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk5MDB8MHwxfHNlYXJjaHw0fHxzdXJ2ZXlvciUyMGVxdWlwbWVudHxlbnwwfHx8fDE3MjgzMjc4Njl8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Equipo de topografía en el campo">
-                        <div class="servicio-content">
-                            <h3>Levantamientos Topográficos</h3>
-                            <p>Generamos datos georreferenciados de alta precisión que sirven como la base fundamental para cualquier proyecto de infraestructura, planificación urbana o gestión de tierras. La exactitud es nuestra garantía.</p>
-                        </div>
+                        <img class="servicio-img" src="https://images.unsplash.com/photo-1581092916375-2a29357b7f08?w=1080" alt="Equipo de topografía">
+                        <div class="servicio-content"><h3>Levantamientos Topográficos</h3><p>Generamos datos georreferenciados de alta precisión que sirven como la base fundamental para cualquier proyecto.</p></div>
                     </div>
-
                     <div class="servicio-card">
-                        <img class="servicio-img" src="https://images.unsplash.com/photo-1527977966376-1c8408f9f11d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk5MDB8MHwxfHNlYXJjaHw0fHxkcm9uZSUyMHN1cnZleWluZ3xlbnwwfHx8fDE3MjgzMjc4ODF8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Drone sobrevolando un terreno verde">
-                        <div class="servicio-content">
-                            <h3>Drones y Fotogrametría</h3>
-                            <p>Utilizamos tecnología de vanguardia para capturar imágenes aéreas de alta resolución, creando modelos digitales 3D y ortomosaicos que permiten un análisis territorial completo y detallado desde una nueva perspectiva.</p>
-                        </div>
+                        <img class="servicio-img" src="https://images.unsplash.com/photo-1527977966376-1c8408f9f11d?w=1080" alt="Drone sobrevolando terreno">
+                        <div class="servicio-content"><h3>Drones y Fotogrametría</h3><p>Utilizamos tecnología de vanguardia para capturar imágenes aéreas de alta resolución y crear modelos digitales 3D.</p></div>
                     </div>
-
                     <div class="servicio-card">
-                         <img class="servicio-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk5MDB8MHwxfHNlYXJjaHw1fHxjb25zdWx0aW5nJTIwbWVldGluZ3xlbnwwfHx8fDE3MjgzMjc4OTF8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Reunión de consultoría con planos">
-                        <div class="servicio-content">
-                            <h3>Asesorías y Consultoría</h3>
-                            <p>Le guiamos en la gestión de proyectos, normatividad territorial y planificación estratégica, asegurando que sus iniciativas sean legalmente sólidas, socialmente justas y ambientalmente responsables.</p>
-                        </div>
+                         <img class="servicio-img" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1080" alt="Reunión de consultoría">
+                        <div class="servicio-content"><h3>Asesorías y Consultoría</h3><p>Le guiamos en la gestión de proyectos, normatividad territorial y planificación estratégica para asegurar el éxito.</p></div>
                     </div>
-
                     <div class="servicio-card">
-                         <img class="servicio-img" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTk5MDB8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjB3b3Jrc2hvcHxlbnwwfHx8fDE3MjgzMjgwNTJ8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Taller de capacitación con una comunidad">
-                        <div class="servicio-content">
-                            <h3>Capacitación y Formación</h3>
-                            <p>Empoderamos a comunidades y equipos locales a través de talleres participativos. Fortalecemos sus capacidades para la gestión autónoma y sostenible de su propio territorio, creando un impacto duradero.</p>
-                        </div>
+                         <img class="servicio-img" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1080" alt="Taller de capacitación">
+                        <div class="servicio-content"><h3>Capacitación y Formación</h3><p>Empoderamos a comunidades y equipos locales a través de talleres participativos para la gestión de su territorio.</p></div>
                     </div>
                 </div>
+
+                <div class="quote-block">
+                    <h3>¿Listo para iniciar tu proyecto?</h3>
+                    <p>Hablemos sobre tus necesidades específicas para ofrecerte la mejor solución.</p>
+                    <button id="open-modal-btn" class="cta-button-quote">Solicitar Cotización</button>
+                </div>
+
             </div>
         </section>
     </main>
+
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="close-button">&times;</button>
+            
+            <form id="whatsapp-form" class="contact-form">
+                <div class="section-header">
+                    <h2 class="section-title">Solicita una Cotización</h2>
+                </div>
+                <div class="form-group">
+                    <label for="cliente-nombre">Tu Nombre Completo</label>
+                    <input type="text" id="cliente-nombre" placeholder="Ej: Alejandro Munera" required>
+                </div>
+                <div class="form-group">
+                    <label for="cliente-contacto">Tu Número de Celular o Email</label>
+                    <input type="text" id="cliente-contacto" placeholder="Para poder contactarte" required>
+                </div>
+                <div class="form-group">
+                    <label for="servicio-interes">¿En qué servicio estás interesado?</label>
+                    <select id="servicio-interes" required>
+                        <option value="" disabled selected>Selecciona un servicio...</option>
+                        <option value="Levantamientos Topográficos">Levantamientos Topográficos</option>
+                        <option value="Drones y Fotogrametría">Drones y Fotogrametría</option>
+                        <option value="Asesorías y Consultoría">Asesorías y Consultoría</option>
+                        <option value="Capacitación y Formación">Capacitación y Formación</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación del Proyecto</label>
+                    <div class="location-input">
+                        <input type="text" id="ubicacion" placeholder="Pega aquí el enlace de Google Maps" required>
+                        <a href="https://maps.google.com/" target="_blank" class="map-button">Abrir Mapa</a>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="mensaje">Describe brevemente tu proyecto</label>
+                    <textarea id="mensaje" rows="4" placeholder="Danos más detalles..."></textarea>
+                </div>
+                <div class="form-group full-width">
+                    <button type="submit" class="submit-button-form">Enviar por WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Lógica para controlar la ventana modal ---
+        const openModalBtn = document.getElementById('open-modal-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalOverlay = document.getElementById('contact-modal');
+
+        openModalBtn.addEventListener('click', () => {
+            modalOverlay.style.display = 'flex';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalOverlay.style.display = 'none';
+        });
+
+        // Cierra el modal si se hace clic fuera del formulario
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+
+        // --- Lógica para enviar el formulario a WhatsApp ---
+        document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const telefono = '573202366363';
+            const nombre = document.getElementById('cliente-nombre').value;
+            const contacto = document.getElementById('cliente-contacto').value;
+            const servicio = document.getElementById('servicio-interes').value;
+            const ubicacion = document.getElementById('ubicacion').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const textoMensaje = `*¡Hola! Quisiera solicitar una cotización desde la página web.*\n\n*Nombre:* ${nombre}\n*Contacto:* ${contacto}\n*Servicio de Interés:* ${servicio}\n*Ubicación:* ${ubicacion}\n\n*Mensaje:*\n${mensaje}`;
+            const url = `https://wa.me/${telefono}?text=${encodeURIComponent(textoMensaje.trim())}`;
+            
+            window.open(url, '_blank');
+        });
+    </script>
 
 </body>
 </html>
